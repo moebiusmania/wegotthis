@@ -1,0 +1,17 @@
+{
+  "name": "todos",
+  "short_name": "todos",
+  "description": "A simple todo app built with Fresh",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f5f5f5",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
