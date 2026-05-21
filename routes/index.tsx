@@ -3,6 +3,7 @@ import { define } from "../utils.ts";
 import { Head } from "fresh/runtime";
 import { addTodo, deleteTodo, getTodos, toggleTodo } from "../lib/todos.ts";
 import TodoApp from "../islands/TodoApp.tsx";
+import ThemeToggle from "../islands/ThemeToggle.tsx";
 
 export const handler = define.handlers({
   GET(_ctx) {
@@ -47,6 +48,7 @@ export default define.page<typeof handler>(({ data }) => {
         <header class="header">
           <h1>todos</h1>
           <p class="subtitle">fresh keeps it simple</p>
+          <ThemeToggle />
         </header>
         <main class="main">
           <TodoApp todos={data.todos} />

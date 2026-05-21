@@ -5,22 +5,22 @@ full-stack web framework for Deno.
 
 ## Tech Stack
 
-| Layer        | Choice                                                    |
-| ------------ | --------------------------------------------------------- |
-| Runtime      | [Deno](https://deno.com/)                                 |
-| Framework    | [Fresh 2.x](https://fresh.deno.dev/) + Preact + Vite      |
-| State        | In-memory store (resets on server restart)                |
-| Signals      | [`@preact/signals`](https://www.npmjs.com/package/@preact/signals) |
+| Layer     | Choice                                                             |
+| --------- | ------------------------------------------------------------------ |
+| Runtime   | [Deno](https://deno.com/)                                          |
+| Framework | [Fresh 2.x](https://fresh.deno.dev/) + Preact + Vite               |
+| State     | In-memory store (resets on server restart)                         |
+| Signals   | [`@preact/signals`](https://www.npmjs.com/package/@preact/signals) |
 
 ## Commands
 
-| Purpose      | Command                                                    |
-| ------------ | ---------------------------------------------------------- |
-| Dev server   | `deno task dev`                                            |
-| Build        | `deno task build`                                          |
-| Prod start   | `deno task start`                                          |
-| Full check   | `deno task check` (fmt → lint → typecheck)                 |
-| Update Fresh | `deno task update`                                         |
+| Purpose      | Command                                    |
+| ------------ | ------------------------------------------ |
+| Dev server   | `deno task dev`                            |
+| Build        | `deno task build`                          |
+| Prod start   | `deno task start`                          |
+| Full check   | `deno task check` (fmt → lint → typecheck) |
+| Update Fresh | `deno task update`                         |
 
 ## Setup
 
