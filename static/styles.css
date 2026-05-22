@@ -14,6 +14,7 @@
   --hover-bg: #252b35;
   --placeholder: #606060;
   --on-primary: #10131a;
+  --sidebar-width: 260px;
 }
 
 [data-theme="light"] {
@@ -379,6 +380,222 @@ body {
 
   .login-form h1 {
     font-size: 1.6rem;
+  }
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1;
+  min-height: 100vh;
+  margin-left: var(--sidebar-width);
+}
+
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--text);
+  line-height: 1;
+  transition: border-color var(--transition);
+}
+
+.sidebar-toggle:hover {
+  border-color: var(--primary);
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+  animation: fade-in 200ms ease;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  z-index: 95;
+  transition: transform 250ms ease;
+}
+
+.sidebar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #ee7948, #ec5b2b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sidebar .theme-toggle {
+  position: static;
+}
+
+.sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-new-list {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--primary);
+  color: var(--on-primary);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  transition: background var(--transition);
+}
+
+.sidebar-new-list:hover {
+  background: var(--primary-hover);
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-section-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 6px;
+  transition: color var(--transition), background var(--transition);
+}
+
+.sidebar-section-toggle:hover {
+  color: var(--text);
+  background: var(--hover-bg);
+}
+
+.sidebar-chevron {
+  font-size: 0.7rem;
+}
+
+.sidebar-section-content {
+  padding: 4px 0;
+}
+
+.sidebar-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  font-style: italic;
+}
+
+.sidebar-footer {
+  padding: 12px 8px;
+  border-top: 1px solid var(--border);
+}
+
+.sidebar-logout {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.sidebar-logout:hover {
+  background: var(--danger-bg);
+}
+
+.app-layout:has(.login-page) .sidebar,
+.app-layout:has(.login-page) .sidebar-toggle,
+.app-layout:has(.login-page) .sidebar-overlay {
+  display: none;
+}
+
+.app-layout:has(.login-page) .app-content {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .app-content {
+    margin-left: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

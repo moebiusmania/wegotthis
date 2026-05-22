@@ -1,4 +1,5 @@
 import { define } from "../utils.ts";
+import Sidebar from "../islands/Sidebar.tsx";
 
 export default define.page(function App({ Component }) {
   return (
@@ -11,7 +12,12 @@ export default define.page(function App({ Component }) {
         <script src="/theme-init.js"></script>
       </head>
       <body>
-        <Component />
+        <div class="app-layout">
+          <Sidebar />
+          <div class="app-content">
+            <Component />
+          </div>
+        </div>
       </body>
     </html>
   );
