@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "vite build",
     "start": "deno serve -A _fresh/server.js",
-    "update": "deno run -A -r jsr:@fresh/update ."
+    "update": "deno run -A -r jsr:@fresh/update .",
+    "hashpwd": "deno run -A scripts/hash-password.ts",
+    "gensecret": "deno run -A scripts/generate-secret.ts"
   },
   "lint": {
     "rules": {

@@ -280,6 +280,108 @@ body {
   border-color: var(--primary);
 }
 
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 340px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 32px;
+
+  & h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #ee7948, #ec5b2b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  & input {
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+    transition: border-color var(--transition);
+
+    &::placeholder {
+      color: var(--placeholder);
+    }
+
+    &:focus {
+      border-color: var(--primary);
+    }
+  }
+}
+
+.login-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: -8px;
+}
+
+.login-error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 10px 12px;
+  background: var(--danger-bg);
+  border: 1px solid color-mix(in srgb, var(--danger) 30%, transparent);
+  border-radius: 8px;
+  margin: 0;
+}
+
+.login-btn {
+  border: none;
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background var(--transition);
+  font-family: inherit;
+
+  &:hover {
+    background: var(--primary-hover);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 16px;
+  }
+
+  .login-form {
+    padding: 24px 20px;
+  }
+
+  .login-form h1 {
+    font-size: 1.6rem;
+  }
+}
+
 @keyframes slide-in {
   from {
     opacity: 0;

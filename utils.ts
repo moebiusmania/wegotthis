@@ -1,6 +1,7 @@
 import { createDefine } from "fresh";
 
-// deno-lint-ignore no-empty-interface
-export interface State {}
+export interface State {
+  user?: string;
+}
 
 export const define = createDefine<State>();
